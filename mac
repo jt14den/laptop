@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Altered thoughtbot script for data/gis lab
+# commented out ruby installed
+# added additional brew formulas and anconda in .laptop.local 
+
 # Welcome to the thoughtbot laptop script!
 # Be prepared to turn your laptop (or desktop, no haters here)
 # into an awesome development machine.
@@ -111,8 +115,8 @@ brew "vim"
 brew "zsh"
 
 # Heroku
-brew "heroku-toolbelt"
-brew "parity"
+# brew "heroku-toolbelt"
+# brew "parity"
 
 # GitHub
 brew "hub"
@@ -121,42 +125,43 @@ brew "hub"
 brew "imagemagick"
 
 # Testing
-brew "qt"
+# brew "qt"
 
 # Programming languages
 brew "libyaml" # should come after openssl
 brew "node"
-brew "rbenv"
-brew "ruby-build"
+# brew "rbenv"
+# brew "ruby-build"
 
 # Databases
 brew "postgres", restart_service: true
-brew "redis", restart_service: true
+# brew "redis", restart_service: true
 EOF
 
-fancy_echo "Configuring Ruby ..."
-find_latest_ruby() {
-  rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
-}
+# fancy_echo "Configuring Ruby ..."
+# find_latest_ruby() {
+#   rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
+# }
 
-ruby_version="$(find_latest_ruby)"
-# shellcheck disable=SC2016
-append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
-eval "$(rbenv init -)"
+# ruby_version="$(find_latest_ruby)"
+# # shellcheck disable=SC2016
+# append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
+# eval "$(rbenv init -)"
 
-if ! rbenv versions | grep -Fq "$ruby_version"; then
-  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
-fi
+# if ! rbenv versions | grep -Fq "$ruby_version"; then
+#   RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
+# fi
 
-rbenv global "$ruby_version"
-rbenv shell "$ruby_version"
-gem update --system
-gem_install_or_update 'bundler'
-number_of_cores=$(sysctl -n hw.ncpu)
-bundle config --global jobs $((number_of_cores - 1))
+# rbenv global "$ruby_version"
+# rbenv shell "$ruby_version"
+# gem update --system
+# gem_install_or_update 'bundler'
+# number_of_cores=$(sysctl -n hw.ncpu)
+# bundle config --global jobs $((number_of_cores - 1))
 
-if [ -f "$HOME/.laptop.local" ]; then
+# make sure path is set up right below for .laptop.local
+if [ -f ".laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090
-  . "$HOME/.laptop.local"
+  . ".laptop.local"
 fi

@@ -1,0 +1,37 @@
+fancy_echo "Updating Homebrew formulae ..."
+brew bundle --file=- <<EOF
+tap "homebrew/services"
+tap "homebrew/science"
+tap "caskroom/cask"
+
+# Unix
+brew "rlwrap"
+brew "pandoc"
+brew "tree"
+brew "jq"
+brew "wget"
+# Databases
+brew "sqlite"
+#R 
+brew "r"
+cask "rstudio"
+EOF
+
+## Install anaconda if not already installed
+if ! command -v conda >/dev/null; then
+fancy_echo "Installing Anaconda	 ..."
+    curl -fsS \
+      'https://repo.continuum.io/archive/Anaconda3-4.1.1-MacOSX-x86_64.sh' | bash
+
+    append_to_zshrc '# recommended by brew doctor'
+
+    # shellcheck disable=SC2016
+    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
+
+    export PATH="/usr/local/bin:$PATH"
+fi
+
+conda update -y conda
+conda update -y anaconda
+
+fancy_echo "All done."
