@@ -18,8 +18,8 @@ Todo
 
 Integrate dotfiles and application configuration. 
 
-**Below are the original instrutions from thoughtbot.***
-
+**Below are the original instrutions from thoughtbot.**
+---
 
 
 Laptop
