@@ -10,7 +10,7 @@ Clone or download the repository. Then inside the 'laptop' folder:
 ```bash
 $ ./mac
 ```
-It will take awhile on first run. On each subsequent run it should get faster. It can be run multiple times on the same machine safely.
+It will take awhile on first run. It first runs thru the mac script and at the end of that file it will run the .laptop.local script.  It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages based on what is already installed on the machine.
 
 Todo
