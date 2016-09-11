@@ -1,3 +1,27 @@
+Data/GIS Lab MacBook OS X 
+=========================
+
+Forked from thoughtbot's shell script to install homebrew and brew tools, we forked that script to adapt and add additional brew formulas.  We also added the installation of anaconda python. 
+
+To Run: 
+
+Clone or download the repository. Then inside the 'laptop' folder: 
+
+```bash
+$ ./mac
+```
+It will take awhile on first run. On each subsequent run it should get faster. It can be run multiple times on the same machine safely.
+It installs, upgrades, or skips packages based on what is already installed on the machine.
+
+Todo
+====
+
+Integrate dotfiles and application configuration. 
+
+**Below are the original instrutions from thoughtbot.***
+
+
+
 Laptop
 ======
 
