@@ -15,6 +15,8 @@ brew "sqlite"
 #R 
 brew "r"
 cask "rstudio"
+cask "google-chrome"
+cask "atom"
 EOF
 
 ## Install anaconda if not already installed
