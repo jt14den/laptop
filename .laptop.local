@@ -12,11 +12,13 @@ brew "jq"
 brew "wget"
 # Databases
 brew "sqlite"
-#R 
+#R
 brew "r"
 cask "rstudio"
+#apps
 cask "google-chrome"
 cask "atom"
+cask "google-refine
 EOF
 
 ## Install anaconda if not already installed
@@ -24,13 +26,6 @@ if ! command -v conda >/dev/null; then
 fancy_echo "Installing Anaconda	 ..."
     curl -fsS \
       'https://repo.continuum.io/archive/Anaconda3-4.1.1-MacOSX-x86_64.sh' | bash
-
-    append_to_zshrc '# recommended by brew doctor'
-
-    # shellcheck disable=SC2016
-    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
-
-    export PATH="/usr/local/bin:$PATH"
 fi
 
 conda update -y conda
