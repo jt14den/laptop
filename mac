@@ -162,6 +162,6 @@ EOF
 # make sure path is set up right below for .laptop.local
 if [ -f ".laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
-  # shellcheck disable=SC1090
+# shellcheck disable=SC1090
   . ".laptop.local"
 fi
