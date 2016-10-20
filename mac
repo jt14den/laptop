@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Altered thoughtbot script for data/gis lab
 # commented out ruby installed
