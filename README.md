@@ -7,10 +7,6 @@ Forked from thoughtbot's shell script to install homebrew and brew tools, we for
 
 To Run:
 
-=======
-Forked from thoughtbot's shell script to install homebrew and brew tools, we forked that script to adapt and add additional brew formulas.  We also added the installation of anaconda python.
-
-
 ```bash
 $ ./mac
 ```
