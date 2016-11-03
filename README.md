@@ -1,20 +1,15 @@
-Data/GIS Lab MacBook OS X 
+Data/GIS Lab MacBook OS X
 =========================
 
-<<<<<<< HEAD
 ![Build Status](https://travis-ci.org/ucsdlib/laptop.svg?branch=master)
 
-Forked from thoughtbot's shell script to install homebrew and brew tools, we forked that script to adapt and add additional brew formulas.  We also added the installation of anaconda python. 
+Forked from thoughtbot's shell script to install homebrew and brew tools, we forked that script to adapt and add additional brew formulas.  We also added the installation of anaconda python.
 
-To Run: 
+To Run:
 
 =======
-Forked from thoughtbot's shell script to install homebrew and brew tools, we forked that script to adapt and add additional brew formulas.  We also added the installation of anaconda python. 
+Forked from thoughtbot's shell script to install homebrew and brew tools, we forked that script to adapt and add additional brew formulas.  We also added the installation of anaconda python.
 
-To Run: 
-
->>>>>>> parent of fee4e02... adding files
-Clone or download the repository. Then inside the 'laptop' folder: 
 
 ```bash
 $ ./mac
@@ -25,7 +20,7 @@ It installs, upgrades, or skips packages based on what is already installed on t
 Todo
 ====
 
-Integrate dotfiles and application configuration. 
+Integrate dotfiles and application configuration.
 
 **Below are the original instrutions from thoughtbot.**
 ---
