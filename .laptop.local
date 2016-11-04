@@ -1,9 +1,16 @@
+# Adding R package location to thaw space
+if ! command -v RScript >/dev/null; then
+  sudo mkdir /Volumes/workspace/rlibs
+  append_to_zshrc 'R_LIBS_USER="/Volumes/workspace/rlibs"'
+fi
+
 fancy_echo "Updating Homebrew formulae ..."
 brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "homebrew/science"
 tap "caskroom/cask"
 tap "buo/cask-upgrade"
+tap "caskroom/versions"
 
 # Unix
 brew "rlwrap"
@@ -19,12 +26,12 @@ cask "rstudio"
 #apps
 cask "google-chrome"
 cask "atom"
-cask "google-refine
 cask "google-refine"
 cask "adobe-acrobat"
 cask "microsoft-office"
 cask "iterm2"
-cask "mactex"
+#cask "mactex"
+cask "java6"
 EOF
 
 ## Install anaconda if not already installed
@@ -53,7 +60,6 @@ brew cask cleanup
 
 if [ ! -r "$HOME/.rcrc" ]; then
   fancy_echo "Setting up dotfiles"
-  #TODO - add conda to local.zshrc
   git clone git://github.com/thoughtbot/dotfiles.git ~/dotfiles
   env RCRC="$HOME/dotfiles/rcrc" rcup
 fi
