@@ -8,7 +8,7 @@ Forked from thoughtbot's shell script to install homebrew and brew tools, we for
 To Run:
 
 ```bash
-$ sudo bash mac
+$ bash mac
 ```
 It will take awhile on first run. It first runs thru the mac script and at the end of that file it will run the .laptop.local script.  It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages based on what is already installed on the machine.
