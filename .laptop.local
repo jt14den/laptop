@@ -1,6 +1,10 @@
 # Adding R package location to thaw space
+
+RLIBS_DIR="/Volumes/workspace/rlibs"
+
 if ! command -v RScript >/dev/null; then
-  sudo mkdir /Volumes/workspace/rlibs
+  sudo mkdir $RLIBS_DIR
+  sudo chown -R "$LOGNAME:admin" " $RLIBS_DIR"
   append_to_zshrc 'R_LIBS_USER="/Volumes/workspace/rlibs"'
 fi
 
