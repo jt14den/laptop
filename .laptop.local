@@ -35,7 +35,7 @@ brew "sqlite"
 brew "r"
 cask "rstudio"
 #apps
-cask "google-chrome"
+#cask "google-chrome"
 cask "atom"
 cask "google-refine"
 #cask "adobe-acrobat"
