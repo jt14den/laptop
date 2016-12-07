@@ -51,7 +51,7 @@ if ! command -v conda >/dev/null; then
 
     curl -O -s https://repo.continuum.io/archive/Anaconda3-4.2.0-MacOSX-x86_64.sh
     #use -b to say yes to all interaction & -p prefix to put anaconda3 install in /volumne
-    bash Anaconda3-4.2.0-MacOSX-x86_64.sh -b -p "/Volumes/workspace/anaconda3"
+    sudo bash Anaconda3-4.2.0-MacOSX-x86_64.sh -b -p "/Volumes/workspace/anaconda3"
     #need to add path to .zshrc.local so conda will be available on boot
     append_to_zshrc 'export PATH="/Volumes/workspace/anaconda3/bin:$PATH"'
     #need to export path at console b/c we use conda in this session below
