@@ -10,7 +10,7 @@
 
 #curl -L https://github.com/ucsdlib/laptop/archive/master.zip > laptop.zip
 #unzip laptop.zip
-#bash laptop/mac 
+#bash laptop-master/mac
 
 fancy_echo() {
   local fmt="$1"; shift
@@ -148,8 +148,10 @@ brew "node"
 # brew "ruby-build"
 
 # Databases
-brew "postgres", restart_service: true
+# brew "postgres", restart_service: true
 # brew "redis", restart_service: true
+brew "sqlite3"
+
 EOF
 
 # fancy_echo "Configuring Ruby ..."
