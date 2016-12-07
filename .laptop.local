@@ -4,14 +4,15 @@ RLIBS_DIR="/Volumes/workspace/rlibs"
 
 if ! command -v RScript >/dev/null; then
   fancy_echo "Setting up R packages dir"
-  mkdir $RLIBS_DIR
-  chown -R "$LOGNAME:admin" " $RLIBS_DIR"
+  sudo mkdir $RLIBS_DIR
+  sudo chown -R "$LOGNAME:admin" "$RLIBS_DIR"
   echo 'R_LIBS="/Volumes/workspace/rlibs"' > ~/.Renviron
 fi
 
 if [ ! -d "$RLIBS_DIR" ]; then
   fancy_echo "Setting up R packages dir"
-  mkdir "$RLIBS_DIR"
+  sudo mkdir "$RLIBS_DIR"
+  sudo chown -R "$LOGNAME:admin" "$RLIBS_DIR"
   echo 'R_LIBS="/Volumes/workspace/rlibs"' > ~/.Renviron
 fi
 
