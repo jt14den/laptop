@@ -1,6 +1,13 @@
 # Adding R package location to thaw space
 
 RLIBS_DIR="/Volumes/workspace/rlibs"
+WORKSPACE="/Volumes/workspace"
+
+if [ ! -d "$WORKSPACE"]; then
+  fancy_echo "Creating workspace directory in /Volumes"
+  sudo mkdir $WORKSPACE
+  sudo chown -R "$LOGNAME:admin" "$WORKSPACE"
+fi
 
 if ! command -v RScript >/dev/null; then
   fancy_echo "Setting up R packages dir"
@@ -55,6 +62,7 @@ if ! command -v conda >/dev/null; then
     #need to add path to .zshrc.local so conda will be available on boot
     append_to_zshrc 'export PATH="/Volumes/workspace/anaconda3/bin:$PATH"'
     #need to export path at console b/c we use conda in this session below
+    sudo chown -R "$LOGNAME:admin" "/volumes/workspace/anaconda3"
     export PATH="/Volumes/workspace/anaconda3/bin:$PATH"
 fi
 
