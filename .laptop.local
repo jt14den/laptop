@@ -3,7 +3,7 @@
 RLIBS_DIR="/Volumes/workspace/rlibs"
 WORKSPACE="/Volumes/workspace"
 
-if [ ! -d "$WORKSPACE"]; then
+if [ ! -d "$WORKSPACE" ]; then
   fancy_echo "Creating workspace directory in /Volumes"
   sudo mkdir $WORKSPACE
   sudo chown -R "$LOGNAME:admin" "$WORKSPACE"
